@@ -1,0 +1,119 @@
+package conversorDeMonedas;
+
+import javax.swing.JOptionPane;
+
+public class Inicio {
+	
+	public static void main(String[] args) {
+		
+		ComversorDivisas conversorDivisa = new ComversorDivisas();
+		
+		String [] opciones = {"Comvertir divisas", "Comvertir temperaturas", "salir"};
+		
+		int elejirOpcion =JOptionPane.showOptionDialog(null,"Seleccione una opcion?", 
+				"Elegir",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null,opciones, opciones[0]);
+		
+		if(elejirOpcion == 2) {
+			JOptionPane.showMessageDialog(null, "Programa finalizado");
+			System.exit(0);
+		}
+		
+		if(elejirOpcion == 0) {
+			
+			boolean continuarPrograma = true;
+			
+			while (continuarPrograma) {
+				
+				String [] ListacomvercionADivisas = {
+						"peso Colombiano a Dolares",
+						"peso Colombiano a Euros", 
+						"peso Colombiano a Libra Esterlina",
+						"peso Colombiano a Yen Japones",
+						"peso Colombiano a won Sul Coreano",
+					
+						"Dolares a peso Colombiao",
+						"Euros a peso Colombiao",
+						"Libra Esterlina a peso Colombiao",
+						"Yen Japones a peso Colombiao",
+						"won Sul Coreano a peso Colombiao",
+				};
+				
+				String comvercionADivisas = (String) JOptionPane.showInputDialog(null,"Seleccione una opcion?", 
+						"Elegir",JOptionPane.QUESTION_MESSAGE,null,ListacomvercionADivisas, ListacomvercionADivisas[0]);
+				
+				String valor =JOptionPane.showInputDialog("Digite el valor a comvertir");
+				double valorDouble;
+				try {
+					valorDouble = Double.valueOf(valor);
+				}catch (NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Valorno valido");
+					return;
+				}catch (NullPointerException e) {
+					JOptionPane.showMessageDialog(null, "Programa finalizado");
+					return;
+				}
+				
+				conversorDivisa.comvetirADivisas(valorDouble, comvercionADivisas);
+				conversorDivisa.comvertirAPesosColombianos(valorDouble, comvercionADivisas);
+				
+				
+				int confirmarContinuarPrograma = JOptionPane.showConfirmDialog(null, "Quieres seguir usando el programa?", 
+						"confirmar", JOptionPane.YES_NO_CANCEL_OPTION);
+				if(confirmarContinuarPrograma == JOptionPane.NO_OPTION || confirmarContinuarPrograma == JOptionPane.CANCEL_OPTION) {
+					continuarPrograma = false;
+					JOptionPane.showMessageDialog(null, "Programa Finalizado");
+				}
+				
+			}
+			
+		}
+		
+		if(elejirOpcion == 1) {
+			
+			boolean continuarPrograma = true;
+			
+			while (continuarPrograma) {
+				
+				String [] ListaComvercionTemperatura = {
+						"comvertir ºC a ºF",
+						"convertir ºF a ºC",
+						"convertir K a ºC",
+						"convertir ºC a K"
+				};
+				
+				String comvercionTemperatura = (String) JOptionPane.showInputDialog(null,"Seleccione una opcion?", 
+						"Elegir",JOptionPane.QUESTION_MESSAGE,null,ListaComvercionTemperatura, ListaComvercionTemperatura[0]);
+				
+				String valor =JOptionPane.showInputDialog("Digite el valor a comvertir");
+				double valorDouble;
+				try {
+					valorDouble = Double.valueOf(valor);
+				}catch (NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Valorno valido");
+					return;
+				}catch (NullPointerException e) {
+					JOptionPane.showMessageDialog(null, "Programa finalizado");
+					return;
+				}
+				
+				if(comvercionTemperatura == "comvertir ºC a ºF") {
+					double resultado = valorDouble * 1.8 + 32;
+					JOptionPane.showMessageDialog(null, resultado + " ºF");
+					
+				}else if(comvercionTemperatura == "convertir ºF a ºC") {
+					double resultado = (valorDouble - 32) / 1.8;
+					JOptionPane.showMessageDialog(null, resultado + " ºC");
+					
+				}else if(comvercionTemperatura == "convertir K a ºC") {
+					double resultado =  valorDouble - 273.15;
+					JOptionPane.showMessageDialog(null, resultado + " ºC");
+					
+				}else if(comvercionTemperatura == "convertir ºC a K") {
+					double resultado = valorDouble + 273.15;
+					JOptionPane.showMessageDialog(null, resultado + " K");
+				}
+			}
+			
+		}
+	}	
+}

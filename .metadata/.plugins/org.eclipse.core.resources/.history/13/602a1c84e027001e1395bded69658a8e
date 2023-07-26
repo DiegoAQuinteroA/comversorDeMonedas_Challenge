@@ -1,0 +1,27 @@
+package conversorDeMonedas;
+
+import javax.swing.JOptionPane;
+
+public class Formularios {
+
+	public void formularioLista(String [] eleccionLista) {
+		
+		String comvercionTemperatura = (String) JOptionPane.showInputDialog(null,"Seleccione una opcion?", 
+				"Elegir",JOptionPane.QUESTION_MESSAGE,null,eleccionLista, eleccionLista[0]);
+	}
+	
+	public void formularioValor() {
+		
+		String valor =JOptionPane.showInputDialog("Digite el valor a comvertir");
+		double valorDouble;
+		try {
+			valorDouble = Double.valueOf(valor);
+		}catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(null, "Valorno valido");
+			return;
+		}catch (NullPointerException e) {
+			JOptionPane.showMessageDialog(null, "Programa finalizado");
+			return;
+		}
+	}
+}

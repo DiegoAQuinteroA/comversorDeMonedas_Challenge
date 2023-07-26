@@ -1,0 +1,3 @@
+INDEX VERSION 1.132+C:\Users\Diego\Documents\programacion\Oracle_ONE\Java\comversorDeMonedas_Challenge\.metadata\.plugins\org.eclipse.jdt.core
+1184089094.index
+1885254009.index

@@ -1,0 +1,68 @@
+package conversorDeMonedas;
+
+import java.text.DecimalFormat;
+
+import javax.swing.JOptionPane;
+
+public class ComversorDivisas {
+
+	//private double pesoColombiano;
+	private double dolar = 4157.35;
+	private double euro = 4626.83;
+	private double libraEsterlina = 5402.70;
+	private double yenJapones = 30.07;
+	private double wonSulCoreano = 0.31;
+	
+	DecimalFormat redondear = new DecimalFormat("#.####");
+	
+	public static void me ( String eleccionValorLista, double valorIngresado) {
+		switch (eleccionValorLista) {
+		case "peso Colombiano a Dolares": {
+			
+			double resultado = valorIngresado / 4157.35;
+			JOptionPane.showMessageDialog(null, resultado + " Dolares");
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + eleccionValorLista);
+		}
+	}
+	
+	public void comvetirADivisas (double valorDouble, String comvercionADivisas) {
+		if(comvercionADivisas == "peso Colombiano a Dolares") {
+			double resultado = valorDouble / this.dolar;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Dolares");
+		}else if (comvercionADivisas == "peso Colombiano a Euros") {
+			double resultado = valorDouble / this.euro;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Euros");
+		}else if (comvercionADivisas == "peso Colombiano a Libra Esterlina") {
+			double resultado = valorDouble / this.libraEsterlina;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Libra Esterlina");
+		}else if (comvercionADivisas == "peso Colombiano a Yen Japones") {
+			double resultado = valorDouble / this.yenJapones;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Yen Japones");
+		}else if (comvercionADivisas == "peso Colombiano a won Sul Coreano") {
+			double resultado = valorDouble / this.wonSulCoreano;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " won Sul Coreano");
+		}
+	}
+	
+	public void comvertirAPesosColombianos(double valorDouble, String comvercionADivisas) {
+		if(comvercionADivisas == "Dolares a peso Colombiao") {
+			double resultado = valorDouble * this.dolar;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}else if (comvercionADivisas == "Euros a peso Colombiao") {
+			double resultado = valorDouble * this.euro;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}else if (comvercionADivisas == "Libra Esterlina a peso Colombiao") {
+			double resultado = valorDouble * this.libraEsterlina;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}else if (comvercionADivisas == "Yen Japones a peso Colombiao") {
+			double resultado = valorDouble * this.yenJapones;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}else if (comvercionADivisas == "won Sul Coreano a peso Colombiao") {
+			double resultado = valorDouble * this.wonSulCoreano;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}
+	}
+	
+}
