@@ -16,6 +16,8 @@ Como extra se agrego una opcion para comvertir temperaturas, de la siguiente man
 - ºC a K
   
 ![opcionDeComvercion](https://github.com/DiegoAQuinteroA/comversorDeMonedas_Challenge/assets/114196106/d870d4a5-9f83-4aba-8121-397113aa0871)
+![comversorDeMonedas](https://github.com/DiegoAQuinteroA/comversorDeMonedas_Challenge/assets/114196106/9c175308-7693-45ee-b0e4-236c2cd65452)
+![comversorDeTemperaturas](https://github.com/DiegoAQuinteroA/comversorDeMonedas_Challenge/assets/114196106/113b04ae-0dc8-4a04-92d6-086c54240f70)
 
-#tecnologias
+## tecnologias
 - java 8
