@@ -7,6 +7,7 @@ El conversor de monedas, convierte la moneda de mi pais (peso Colombiano) a las 
 - Libras Esterlinas
 - Yen Japonés
 - Won sul-coreano
+  
 Recordando que también es posible convertir inversamente, es decir, de las divisas mensionadas anteriormente a pesos Colombianos.
 
 Como extra se agrego una opcion para comvertir temperaturas, de la siguiente manera:
