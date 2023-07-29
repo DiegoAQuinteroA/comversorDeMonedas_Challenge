@@ -1,5 +1,7 @@
 # conversorDeMonedas_Challenge
 
+Challenge Java del programa ONE, Oracle mas Alura latam.
+
 convertidor de monedas y temperaturas.
 El conversor de monedas, convierte la moneda de mi pais (peso Colombiano) a las siguientes divisas.
 - Dólar
