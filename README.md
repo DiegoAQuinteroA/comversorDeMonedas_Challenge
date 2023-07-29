@@ -1,6 +1,6 @@
 # conversorDeMonedas_Challenge
 
-[convertidor de monedas y temperaturas.
+convertidor de monedas y temperaturas.
 El conversor de monedas, convierte la moneda de mi pais (peso Colombiano) a las siguientes divisas.
 - Dólar
 - Euros
@@ -14,7 +14,7 @@ Como extra se agrego una opcion para comvertir temperaturas, de la siguiente man
 - ºF a ºC
 - K a ºC
 - ºC a K
-]
+
 
 ##tecnologias
-[ - java 8]
+- java 8
