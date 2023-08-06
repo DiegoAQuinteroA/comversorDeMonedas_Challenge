@@ -1,0 +1,43 @@
+package conversorDeMonedas;
+
+import javax.swing.JOptionPane;
+
+public class OperacionesDivisas extends ComversorDivisas{
+
+	public void comvertirAPesosColombianos(double valorDouble, String comvercionADivisas) {
+		switch (comvercionADivisas) {
+		case "peso Colombiano a Dolares": {
+			
+			double resultado = valorDouble / super.getDolar();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Dolares");
+			break;
+		}
+		case "peso Colombiano a Euros": {
+			
+			double resultado = valorDouble / super.getEuro();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Euros");
+			break;
+		}
+		case "peso Colombiano a Libra Esterlina": {
+			
+			double resultado = valorDouble / super.getLibraEsterlina();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Libra Esterlina");
+			break;
+		}
+		case "peso Colombiano a Yen Japones": {
+			
+			double resultado = valorDouble / super.getYenJapones();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Yen Japones");
+			break;
+		}
+		case "won Sul Coreano a peso Colombiao": {
+			
+			double resultado = valorDouble * super.getWonSulCoreano();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+			break;
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + comvercionADivisas);
+		}
+	}
+}

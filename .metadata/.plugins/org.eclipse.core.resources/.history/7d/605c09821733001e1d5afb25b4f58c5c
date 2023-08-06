@@ -1,0 +1,46 @@
+package conversorTemperaturas;
+
+import java.text.DecimalFormat;
+
+import javax.swing.JOptionPane;
+
+public class OperacionesTemperaturas extends ConversorTemperaturas{
+
+	/**
+	 * comvierte el valor ingresado a la unidad seleccionada.
+	 * @param opcionDeLaLista opcion seleccionada por el usuario de la lista "ListaComvercionTemperatura".
+	 * @param valorDouble valor ingresado por el usuario convertido a double
+	 */
+	public static void comvertirtemperaturas(String opcionDeLaLista, double valorDouble) {
+		DecimalFormat redondear = new DecimalFormat("#.####");
+		
+		switch (opcionDeLaLista) {
+		case "comvertir ºC a ºF": {
+			
+			double resultado =  valorDouble * 1.8 + 32;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado)+ " ºF");
+			break;
+		}
+		case "convertir ºF a ºC": {
+			
+			double resultado = (valorDouble - 32) / 1.8;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " ºC");
+			break;
+		}
+		case "convertir K a ºC": {
+			
+			double resultado =  valorDouble - 273.15;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " ºC");
+			break;
+		}
+		case "convertir ºC a K": {
+			
+			double resultado = valorDouble + 273.15;
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " K");
+			break;
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + opcionDeLaLista);
+		}
+	}
+}

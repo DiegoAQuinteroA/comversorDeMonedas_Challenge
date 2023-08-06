@@ -1,0 +1,22 @@
+package conversorTemperaturas;
+
+/**
+ * guarda las operaciones matematicas para realizar las comversiones 
+ * segun los valores suministrados a los parametros
+ * @author Diego
+ *
+ */
+public class ConversorTemperaturas {
+	
+	private String [] ListaComvercionTemperatura = {
+			"comvertir ºC a ºF",
+			"convertir ºF a ºC",
+			"convertir K a ºC",
+			"convertir ºC a K"
+	};
+	
+	public String[] getListaComvercionTemperatura() {
+		return ListaComvercionTemperatura;
+	}
+	
+}

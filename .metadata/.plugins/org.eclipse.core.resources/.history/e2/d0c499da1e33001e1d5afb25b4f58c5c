@@ -1,0 +1,51 @@
+package conversorDeMonedas;
+
+import javax.swing.JOptionPane;
+
+public class OperacionesDivisas extends ComversorDivisas{
+	
+	/**
+	 * operaciones matematicas para combertir de pesos colombianos a las diferentes divisas
+		 * -Dolar
+		 * -Euro
+		 * -Libra Esterlina
+		 * -Yen Japones
+		 * -won Sul Coreano
+	 * @param valorDouble valor ingresado por el usuario convertido a double
+	 * @param comvercionADivisas divisa seleccionada por el usuario a la cual desea comvertir
+	 */
+	public void comvetirADivisas(double valorDouble, String comvercionADivisas) {
+		switch (comvercionADivisas) {
+		case "peso Colombiano a Dolares": {
+			
+			double resultado = valorDouble / super.getDolar();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Dolares");
+			break;
+		}
+		case "peso Colombiano a Euros": {
+			
+			double resultado = valorDouble / super.getEuro();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Euros");
+			break;
+		}
+		case "peso Colombiano a Libra Esterlina": {
+			
+			double resultado = valorDouble / super.getLibraEsterlina();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Libra Esterlina");
+			break;
+		}
+		case "peso Colombiano a Yen Japones": {
+			
+			double resultado = valorDouble / super.getYenJapones();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Yen Japones");
+			break;
+		}
+		case "peso Colombiano a won Sul Coreano": {
+			
+			double resultado = valorDouble / super.getWonSulCoreano();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " won Sul Coreano");
+			break;
+		}
+		}
+	}
+}

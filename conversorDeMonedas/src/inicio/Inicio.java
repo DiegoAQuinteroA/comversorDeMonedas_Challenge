@@ -14,15 +14,16 @@ public class Inicio {
 	
 	public static void main(String[] args) {
 		
-		ComversorDivisas conversorDivisa = new ComversorDivisas();
+		ConversorMonedas conversorMonedas = new ConversorMonedas();
 		ConversorTemperaturas conversorTemperaturas = new ConversorTemperaturas();
 		Formularios formularios = new Formularios();
 		
 		String [] opciones = {"Comvertir divisas", "Comvertir temperaturas", "salir"};
 		
 		int elejirOpcion = JOptionPane.showOptionDialog(null,"Seleccione una opcion?", 
-				"Elegir",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null,opciones, opciones[0]);
+				"Comversor",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null,opciones, opciones[0]);
 		
+		System.out.println(elejirOpcion);
 		if(elejirOpcion == 2) {
 			JOptionPane.showMessageDialog(null, "Programa finalizado");
 			System.exit(0);
@@ -35,16 +36,14 @@ public class Inicio {
 			while (continuarPrograma) {
 	
 				
-				String eleccionValorLista = formularios.formularioLista(conversorDivisa.getListacomvercionADivisas());
+				String eleccionValorLista = formularios.formularioLista(conversorMonedas.getListacomvercionADivisas());
 				Double valorIngresado = formularios.formularioValor();
-			
-				conversorDivisa.comvetirADivisas(valorIngresado, eleccionValorLista);
-				conversorDivisa.comvertirAPesosColombianos(valorIngresado, eleccionValorLista);
+				
+				conversorMonedas.convetir(eleccionValorLista, valorIngresado);
 				
 				continuarPrograma = formularios.confirmarContinuarPrograma();
 				
 			}
-			
 		}
 		
 		if(elejirOpcion == 1) {
@@ -59,8 +58,7 @@ public class Inicio {
 				conversorTemperaturas.comvertirtemperaturas(eleccionValorLista, valorIngresado);
 				
 				continuarPrograma = formularios.confirmarContinuarPrograma();
-			}
-			
+			}	
 		}
 	}	
 }

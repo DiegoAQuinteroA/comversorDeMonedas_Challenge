@@ -1,0 +1,110 @@
+package conversorDeMonedas;
+
+import java.text.DecimalFormat;
+
+/**
+ * guarda las operaciones matematicas para comvertir el valor ingresado a la divisa seleccionada.
+ * @author Diego
+ *
+ */
+public class ConversorMonedas {
+
+	
+	private double dolar = 4157.35;
+	private double euro = 4626.83;
+	private double libraEsterlina = 5402.70;
+	private double yenJapones = 30.07;
+	private double wonSulCoreano = 0.31;
+	
+	private String [] ListacomvercionADivisas = {
+			"peso Colombiano a Dolares",
+			"peso Colombiano a Euros", 
+			"peso Colombiano a Libra Esterlina",
+			"peso Colombiano a Yen Japones",
+			"peso Colombiano a won Sul Coreano",
+		
+			"Dolares a peso Colombiao",
+			"Euros a peso Colombiao",
+			"Libra Esterlina a peso Colombiao",
+			"Yen Japones a peso Colombiao",
+			"won Sul Coreano a peso Colombiao",
+	};
+	
+	DecimalFormat redondear = new DecimalFormat("#.####");
+	OperacionesDivisas divisas = new OperacionesDivisas();
+	OperacionesPesosCol pesos = new OperacionesPesosCol();
+	
+	
+	public String[] getListacomvercionADivisas() {
+		return ListacomvercionADivisas;
+	}
+	
+	public double getDolar() {
+		return dolar;
+	}
+
+	public double getEuro() {
+		return euro;
+	}
+
+	public double getLibraEsterlina() {
+		return libraEsterlina;
+	}
+
+	public double getYenJapones() {
+		return yenJapones;
+	}
+
+	public double getWonSulCoreano() {
+		return wonSulCoreano;
+	}
+
+	public DecimalFormat getRedondear() {
+		return redondear;
+	}
+
+	public void convetir(String comvercionADivisas, double valorDouble) {
+		switch (comvercionADivisas) {
+		case "peso Colombiano a Dolares": {
+			divisas.dolar(valorDouble);
+			break;
+		}
+		case "peso Colombiano a Euros": {
+			divisas.euro(valorDouble);
+			break;
+		}
+		case "peso Colombiano a Libra Esterlina": {
+			divisas.libraEsterlina(valorDouble);
+			break;
+		}
+		case "peso Colombiano a Yen Japones": {
+			divisas.yenJapones(valorDouble);
+			break;
+		}
+		case "peso Colombiano a won Sul Coreano": {
+			divisas.wonSulCoreano(valorDouble);
+			break;
+		}
+		case "Dolares a peso Colombiao": {
+			pesos.dolarApesos(valorDouble);
+			break;
+		}
+		case "Euros a peso Colombiao": {
+			pesos.euroApesos(valorDouble);
+			break;
+		}
+		case "Libra Esterlina a peso Colombiao": {
+			pesos.libraEsterlinaApesos(valorDouble);
+			break;
+		}
+		case "Yen Japones a peso Colombiao": {
+			pesos.yenJaponesApesos(valorDouble);
+			break;
+		}
+		case "won Sul Coreano a peso Colombiao": {
+			pesos.wonSulCoreanoApesos(valorDouble);
+			break;
+		}
+		}
+	}
+}

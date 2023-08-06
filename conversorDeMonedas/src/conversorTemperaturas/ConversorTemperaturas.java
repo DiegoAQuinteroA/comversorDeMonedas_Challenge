@@ -1,10 +1,7 @@
 package conversorTemperaturas;
 
-import java.text.DecimalFormat;
-import javax.swing.JOptionPane;
-
 /**
- * guarda las operaciones matematicas para realizar las comversiones 
+ * guarda el metodo que permite ejecutar las operaciones de convercion de temperaturas
  * segun los valores suministrados a los parametros
  * @author Diego
  *
@@ -18,37 +15,36 @@ public class ConversorTemperaturas {
 			"convertir ºC a K"
 	};
 	
+	OperacionesTemperaturas temperaturas = new OperacionesTemperaturas();
+	
 	public String[] getListaComvercionTemperatura() {
 		return ListaComvercionTemperatura;
 	}
-
-	/**
-	 * objeto que redondea a 4 decimales
-	 */
-	DecimalFormat redondear = new DecimalFormat("#.####");
 	
 	/**
-	 * comvierte el valor ingresado a la unidad seleccionada.
-	 * @param comvercionTemperatura opcion seleccionada por el usuario, es la unidad a comvertir.
+	 * ejecuta la operacion matematica de convercion de temperatura seleccionada por el usuario.
+	 * @param opcionDeLaLista opcion seleccionada por el usuario de la lista "ListaComvercionTemperatura".
 	 * @param valorDouble valor ingresado por el usuario convertido a double
 	 */
-	public void comvertirtemperaturas(String comvercionTemperatura, double valorDouble) {
-
-		if(comvercionTemperatura == "comvertir ºC a ºF") {
-			double resultado =  valorDouble * 1.8 + 32;
-			JOptionPane.showMessageDialog(null, redondear.format(resultado)+ " ºF");
-			
-		}else if(comvercionTemperatura == "convertir ºF a ºC") {
-			double resultado = (valorDouble - 32) / 1.8;
-			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " ºC");
-			
-		}else if(comvercionTemperatura == "convertir K a ºC") {
-			double resultado =  valorDouble - 273.15;
-			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " ºC");
-			
-		}else if(comvercionTemperatura == "convertir ºC a K") {
-			double resultado = valorDouble + 273.15;
-			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " K");
+	public  void comvertirtemperaturas(String opcionDeLaLista, double valorDouble) {
+		
+		switch (opcionDeLaLista) {
+		case "comvertir ºC a ºF": {
+			temperaturas.celciusAf(valorDouble);
+			break;
+		}
+		case "convertir ºF a ºC": {
+			temperaturas.farenheitAc(valorDouble);
+			break;
+		}
+		case "convertir K a ºC": {
+			temperaturas.kelvinAc(valorDouble);
+			break;
+		}
+		case "convertir ºC a K": {
+			temperaturas.celciusAk(valorDouble);
+			break;
+		}
 		}
 	}
 }

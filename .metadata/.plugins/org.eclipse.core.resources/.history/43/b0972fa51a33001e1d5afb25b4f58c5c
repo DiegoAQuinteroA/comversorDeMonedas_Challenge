@@ -1,0 +1,59 @@
+package conversorDeMonedas;
+
+import javax.swing.JOptionPane;
+
+public class OperacionesPesosCol extends ComversorDivisas{
+
+	/**
+	 * operaciones matematicas para combertir de las diferentes visas a pesos colombianos
+	 * @param valorDouble valor ingresado por el usuario convertido a double
+	 * @param comvercionADivisas divisa seleccionada por el usuario a la cual desea comvertir
+	 */
+	public void comvertirAPesosColombianos(double valorDouble, String comvercionADivisas) {
+		switch (comvercionADivisas) {
+		case "Dolares a peso Colombiao": {
+			
+			double resultado = valorDouble * super.getDolar();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}
+		case "Euros a peso Colombiao": {
+			
+			double resultado = valorDouble * super.getEuro();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}
+		case "Libra Esterlina a peso Colombiao": {
+			
+			double resultado = valorDouble * super.getLibraEsterlina();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}
+		case "Yen Japones a peso Colombiao": {
+			
+			double resultado = valorDouble * super.getYenJapones();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}
+		case "won Sul Coreano a peso Colombiao": {
+			
+			double resultado = valorDouble * super.getWonSulCoreano();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + comvercionADivisas);
+		}
+		if(comvercionADivisas == "Dolares a peso Colombiao") {
+			double resultado = valorDouble * super.getDolar();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}else if (comvercionADivisas == "Euros a peso Colombiao") {
+			double resultado = valorDouble * super.getEuro();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}else if (comvercionADivisas == "Libra Esterlina a peso Colombiao") {
+			double resultado = valorDouble * super.getLibraEsterlina();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}else if (comvercionADivisas == "Yen Japones a peso Colombiao") {
+			double resultado = valorDouble * super.getYenJapones();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}else if (comvercionADivisas == "won Sul Coreano a peso Colombiao") {
+			double resultado = valorDouble * super.getWonSulCoreano();
+			JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+		}
+	}
+}

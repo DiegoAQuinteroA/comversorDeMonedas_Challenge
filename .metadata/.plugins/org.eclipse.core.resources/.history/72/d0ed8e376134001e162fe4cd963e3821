@@ -1,0 +1,31 @@
+package conversorDeMonedas;
+
+import javax.swing.JOptionPane;
+
+public class OperacionesDivisas extends ComversorDivisas{
+	
+	public void dolar (double valorDouble) {
+		double resultado = valorDouble / super.getDolar();
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Dolares");
+	}
+	
+	public void euro (double valorDouble) {
+		double resultado = valorDouble / super.getEuro();
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Euros");
+	}
+	
+	public void libraEsterlina (double valorDouble) {
+		double resultado = valorDouble / super.getLibraEsterlina();
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Libra Esterlina");
+	}
+	
+	public void yenJapones (double valorDouble) {
+		double resultado = valorDouble / super.getYenJapones();
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Yen Japones");
+	}
+	
+	public void wonSulCoreano (double valorDouble) {
+		double resultado = valorDouble / super.getWonSulCoreano();
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " won Sul Coreano");
+	}
+}

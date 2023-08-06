@@ -1,0 +1,32 @@
+package conversorDeMonedas;
+
+import javax.swing.JOptionPane;
+
+public class OperacionesPesosCol extends ComversorDivisas{
+	
+	private void dolarApesos( double valorDouble) {
+		double resultado = valorDouble * super.getDolar();
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+	}
+	
+	private void euroApesos( double valorDouble) {
+		double resultado = valorDouble * super.getEuro();
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+	}
+	
+	private void libraEsterlinaApesos( double valorDouble) {
+		double resultado = valorDouble * super.getLibraEsterlina();
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+	}
+	
+	private void yenJaponesApesos( double valorDouble) {
+		double resultado = valorDouble * super.getYenJapones();
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+	}
+	
+	private void wonSulCoreanoApesos( double valorDouble) {
+		double resultado = valorDouble * super.getWonSulCoreano();
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Peso Colombiao");
+	}
+
+}

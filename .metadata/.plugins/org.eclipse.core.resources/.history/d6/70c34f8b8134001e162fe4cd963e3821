@@ -1,0 +1,34 @@
+package conversorDeMonedas;
+
+import java.text.DecimalFormat;
+
+import javax.swing.JOptionPane;
+
+public class OperacionesDivisas{
+	DecimalFormat redondear = new DecimalFormat("#.####");
+	
+	public void dolar (double valorDouble) {
+		double resultado = valorDouble / 4157.35;
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Dolares");
+	}
+	
+	public void euro (double valorDouble) {
+		double resultado = valorDouble / 4626.83;
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Euros");
+	}
+	
+	public void libraEsterlina (double valorDouble) {
+		double resultado = valorDouble / 5402.70;
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Libra Esterlina");
+	}
+	
+	public void yenJapones (double valorDouble) {
+		double resultado = valorDouble / 30.07;
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " Yen Japones");
+	}
+	
+	public void wonSulCoreano (double valorDouble) {
+		double resultado = valorDouble / 0.31;
+		JOptionPane.showMessageDialog(null, redondear.format(resultado) + " won Sul Coreano");
+	}
+}
